@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -42,6 +43,15 @@ public class Typer : MonoBehaviour
     private string remainingWord = string.Empty;
     private string currentWord = string.Empty;
     private Vector3 originalTextPos;
+    private bool canType = true;
+    public bool CanType
+    {
+        get => canType;
+        set
+        {
+            canType = value;
+        }
+    }
 
     // Statistics
     private int totalCharactersTyped;
@@ -119,7 +129,7 @@ public class Typer : MonoBehaviour
 
     private void CheckInput()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && canType)
         {
             string keysPressed = Input.inputString;
 
