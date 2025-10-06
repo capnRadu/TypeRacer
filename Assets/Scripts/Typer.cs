@@ -11,7 +11,7 @@ public class Typer : MonoBehaviour
     [Header("Core References")]
     public WordBank wordBank;
     public StabilityMeter stabilityMeter;
-    public Canvas canvas;
+    public GameObject typedLetterParentObject;
     public TextMeshProUGUI wordOutput;
 
     [Header("UI Elements")]
@@ -168,7 +168,7 @@ public class Typer : MonoBehaviour
         HandleFocusBurst(true);
 
         // Typing animation
-        GameObject typedLetterAnim = Instantiate(typedLetterPrefab, canvas.transform);
+        GameObject typedLetterAnim = Instantiate(typedLetterPrefab, typedLetterParentObject.transform);
         typedLetterAnim.GetComponent<TextMeshProUGUI>().text = typedLetter;
         Destroy(typedLetterAnim, 1f);
 
