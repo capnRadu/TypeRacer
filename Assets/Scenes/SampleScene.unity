@@ -521,6 +521,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165540750}
   m_CullTransparentMesh: 1
+--- !u!1 &179897875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 179897876}
+  m_Layer: 5
+  m_Name: MessageWindow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &179897876
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179897875}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1232343378}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &218375416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,8 +1542,8 @@ MonoBehaviour:
   signalUIPanel: {fileID: 1040577990}
   typer: {fileID: 1122744522}
   stabilityMeter: {fileID: 1122744525}
-  minSignalDelay: 2
-  maxSignalDelay: 3
+  minSignalDelay: 10
+  maxSignalDelay: 16
 --- !u!1 &651208093
 GameObject:
   m_ObjectHideFlags: 0
@@ -2629,6 +2664,9 @@ MonoBehaviour:
   playerWave: {fileID: 5168696687606808756}
   frequencySlider: {fileID: 457034638}
   amplitudeSlider: {fileID: 909256657}
+  alienSignalManager: {fileID: 647958768}
+  decodedMessagePrefab: {fileID: 2567607083406860984, guid: 908152d72cc395b42a345ce7e84a889a, type: 3}
+  messageParent: {fileID: 179897875}
   randomFrequencyRange: {x: 0, y: 1}
   randomAmplitudeRange: {x: 0, y: 1}
   matchMargin: 0.1
@@ -8003,6 +8041,7 @@ RectTransform:
   m_Children:
   - {fileID: 1775163132}
   - {fileID: 2115682616}
+  - {fileID: 179897876}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

@@ -3,18 +3,26 @@ using UnityEngine.UI;
 
 public class SignalMatchingController : MonoBehaviour
 {
-    [Header("References")]
-    public Sinewave targetWave;
-    public Sinewave playerWave;
-    public Slider frequencySlider;
-    public Slider amplitudeSlider;
+
+    [Header("UI References")]
+    [SerializeField] private Sinewave targetWave;
+    [SerializeField] private Sinewave playerWave;
+    [SerializeField] private Slider frequencySlider;
+    [SerializeField] private Slider amplitudeSlider;
+
+    [Header("Other References")]
+    [SerializeField] private AlienSignalManager alienSignalManager;
+    [SerializeField] private GameObject decodedMessagePrefab;
+    [SerializeField] private GameObject messageParent;
 
     [Header("Target Wave Randomization")]
-    public Vector2 randomFrequencyRange = new Vector2(0.5f, 3f);
-    public Vector2 randomAmplitudeRange = new Vector2(0.5f, 2f);
+    [SerializeField] private Vector2 randomFrequencyRange = new Vector2(0.5f, 3f);
+    [SerializeField] private Vector2 randomAmplitudeRange = new Vector2(0.5f, 2f);
 
     [Header("Matching Settings")]
-    public float matchMargin = 0.05f; // allowed margin of error
+    [SerializeField] private float matchMargin = 0.05f; // allowed margin of error
+
+    private bool hasSubmitted = false;
 
     private void OnEnable()
     {
@@ -23,6 +31,8 @@ public class SignalMatchingController : MonoBehaviour
 
         frequencySlider.value = playerWave.frequency;
         amplitudeSlider.value = playerWave.amplitude;
+
+        hasSubmitted = false;
     }
 
     private void Start()
@@ -43,16 +53,18 @@ public class SignalMatchingController : MonoBehaviour
 
     public void Submit()
     {
+        if (hasSubmitted) return;
+
         bool frequencyMatch = Mathf.Abs(playerWave.frequency - targetWave.frequency) <= matchMargin;
         bool amplitudeMatch = Mathf.Abs(playerWave.amplitude - targetWave.amplitude) <= matchMargin;
 
         if (frequencyMatch && amplitudeMatch)
         {
-            Debug.Log("Match success! Alien message received!");
-        }
-        else
-        {
-            Debug.Log("Match failed. Try again.");
+            hasSubmitted = true;
+
+            GameObject decodedMessage = Instantiate(decodedMessagePrefab, messageParent.transform);
+            Destroy(decodedMessage, 3f);
+            alienSignalManager.Invoke(nameof(alienSignalManager.CompleteSignal), 3f);
         }
     }
 

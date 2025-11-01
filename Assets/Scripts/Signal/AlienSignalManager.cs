@@ -21,6 +21,12 @@ public class AlienSignalManager : MonoBehaviour
     {
         while (true)
         {
+            if (signalActive)
+            {
+                yield return null;
+                continue;
+            }
+
             float waitTime = Random.Range(minSignalDelay, maxSignalDelay);
             yield return new WaitForSeconds(waitTime);
             TriggerSignal();
@@ -36,19 +42,11 @@ public class AlienSignalManager : MonoBehaviour
         signalUIPanel.SetActive(true);
     }
 
-    public void CompleteSignal(bool success)
+    public void CompleteSignal()
     {
         signalActive = false;
         signalUIPanel.SetActive(false);
         typer.enabled = true;
-
-        if (success)
-        {
-            stabilityMeter.IncreaseStability(10f);
-        }
-        else
-        {
-            stabilityMeter.DecreaseStability(10f);
-        }
+        stabilityMeter.IncreaseStability(10f);
     }
 }
