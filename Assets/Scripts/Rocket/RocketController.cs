@@ -9,7 +9,6 @@ public class RocketController : MonoBehaviour
 
     [Header("Rocket Movement Settings")]
     [SerializeField] private float lowY = -240f;
-    [SerializeField] private float midY = 12f;
     [SerializeField] private float highY = 240f;
     [SerializeField] private float moveLerpSpeed = 5f;
 
