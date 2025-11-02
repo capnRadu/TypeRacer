@@ -79,11 +79,6 @@ public class HighScoreManager : MonoBehaviour
             currentDistanceTraveled += speed * Time.deltaTime;
             distanceText.text = $"Travelled Distance: {FormatDistance(currentDistanceTraveled)}";
         }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
     }
 
     private void FindTextReferences()
