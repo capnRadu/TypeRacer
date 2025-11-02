@@ -28,7 +28,7 @@ public class WordBank : MonoBehaviour
         "In the middle of difficulty lies opportunity.",
         "It does not do to dwell on dreams and forget to live.",
         "The greatest glory in living lies not in never falling, but in rising every time we fall.",
-        "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        "Success is not final, failure is not fatal, it is the courage to continue that counts.",
         "The only way to do great work is to love what you do.",
         "Life is what happens when you are busy making other plans.",
         "The future belongs to those who believe in the beauty of their dreams.",
