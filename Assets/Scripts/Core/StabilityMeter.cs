@@ -107,7 +107,7 @@ public class StabilityMeter : MonoBehaviour
         filmGrain.intensity.value = Mathf.Lerp(0f, 1f, displayedT);
         chromaticAberration.intensity.value = Mathf.Lerp(0f, 0.628f, displayedT);
 
-        lensDistortion.intensity.value = Mathf.Lerp(0f, -0.66f, displayedT);
+        lensDistortion.intensity.value = Mathf.Lerp(0f, -0.22f, displayedT);
 
         float pulse = (Mathf.Sin((Time.time + timeOffset) * 2f) * 0.5f) + 0.5f;
         lensDistortion.xMultiplier.value = pulse;
