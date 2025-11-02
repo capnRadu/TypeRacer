@@ -48,5 +48,6 @@ public class AlienSignalManager : MonoBehaviour
         signalUIPanel.SetActive(false);
         typer.enabled = true;
         stabilityMeter.IncreaseStability(10f);
+        HighScoreManager.Instance.AddDecodedMessage();
     }
 }
