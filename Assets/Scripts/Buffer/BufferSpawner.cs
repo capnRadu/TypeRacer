@@ -9,7 +9,7 @@ public class BufferSpawner : MonoBehaviour
     public Typer typer;
 
     // Timing
-    private float minDelay = 20f;
+    private float minDelay = 25f;
     private float maxDelay = 30f;
 
     private void Start()

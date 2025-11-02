@@ -1573,8 +1573,8 @@ MonoBehaviour:
   signalUIPanel: {fileID: 1040577990}
   typer: {fileID: 1122744522}
   stabilityMeter: {fileID: 1122744525}
-  minSignalDelay: 10
-  maxSignalDelay: 16
+  minSignalDelay: 15
+  maxSignalDelay: 25
 --- !u!1 &651208093
 GameObject:
   m_ObjectHideFlags: 0

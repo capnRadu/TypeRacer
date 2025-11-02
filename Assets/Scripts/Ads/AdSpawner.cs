@@ -9,7 +9,7 @@ public class AdSpawner : MonoBehaviour
 
     // Spawn settings
     private int maxAds = 8;
-    private float minSpawnDelay = 5f;
+    private float minSpawnDelay = 8f;
     private float maxSpawnDelay = 15f;
 
     private RectTransform parentRect;
